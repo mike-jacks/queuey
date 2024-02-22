@@ -21,7 +21,6 @@ class Queuey(Generic[T]):
             raise TypeError(f"Item is not of type {self.data_type}.")
         self.q += [item]
         self.size += 1
-        return self.q
     
     def dequeue(self) -> T:
         """ Removes the next item in the queue and returns it """
@@ -46,6 +45,7 @@ class Queuey(Generic[T]):
     def clear(self) -> None:
         """ Removes all items from the queue """
         self.q = []
+        self.size = 0
 
 def main():
     q = Queuey(float)
@@ -79,9 +79,11 @@ def main():
     print(f"Expected: 12.1, got: {q.dequeue()}")
     print(f"Expected: 17.21, got: {q.dequeue()}")
     print(f"Expected: None, got: {q.dequeue()}")
-
+    
+    q.enqueue(7.7)
     q.clear()
     print(f"Expected: 0, got: {q.length()}")
 
+    
 if __name__ == "__main__":
     main()
