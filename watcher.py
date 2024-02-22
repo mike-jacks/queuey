@@ -32,6 +32,7 @@ class Handler(FileSystemEventHandler):
         elif event.event_type == 'modified':
             # Check if the modified file is the file to watch
             if event.src_path.endswith(Watcher.FILE_TO_WATCH):
+                print("\n\n")
                 print(f"{Watcher.FILE_TO_WATCH} has been modified. Running it below here:\nv v v v v v v v v v v v v v v v v v\n")
                 subprocess.run(["python", Watcher.FILE_TO_WATCH])
 
