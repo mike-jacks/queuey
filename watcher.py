@@ -35,6 +35,10 @@ class Handler(FileSystemEventHandler):
                 print("\n\n")
                 print(f"{Watcher.FILE_TO_WATCH} has been modified. Running it below here:\nv v v v v v v v v v v v v v v v v v\n")
                 subprocess.run(["python", Watcher.FILE_TO_WATCH])
+                print("\n")
+                print("^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^")
+                print("Completed above")
+
 
 if __name__ == "__main__":
     w = Watcher()
